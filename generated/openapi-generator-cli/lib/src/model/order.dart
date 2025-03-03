@@ -12,12 +12,12 @@ part 'order.g.dart';
 /// Order
 ///
 /// Properties:
-/// * [id] 
-/// * [petId] 
-/// * [quantity] 
-/// * [shipDate] 
+/// * [id]
+/// * [petId]
+/// * [quantity]
+/// * [shipDate]
 /// * [status] - Order Status
-/// * [complete] 
+/// * [complete]
 @BuiltValue()
 abstract class Order implements Built<Order, OrderBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -113,7 +113,9 @@ class _$OrderSerializer implements PrimitiveSerializer<Order> {
     Order object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -200,22 +202,23 @@ class _$OrderSerializer implements PrimitiveSerializer<Order> {
 }
 
 class OrderStatusEnum extends EnumClass {
-
   /// Order Status
   @BuiltValueEnumConst(wireName: r'placed')
   static const OrderStatusEnum placed = _$orderStatusEnum_placed;
+
   /// Order Status
   @BuiltValueEnumConst(wireName: r'approved')
   static const OrderStatusEnum approved = _$orderStatusEnum_approved;
+
   /// Order Status
   @BuiltValueEnumConst(wireName: r'delivered')
   static const OrderStatusEnum delivered = _$orderStatusEnum_delivered;
 
-  static Serializer<OrderStatusEnum> get serializer => _$orderStatusEnumSerializer;
+  static Serializer<OrderStatusEnum> get serializer =>
+      _$orderStatusEnumSerializer;
 
-  const OrderStatusEnum._(String name): super(name);
+  const OrderStatusEnum._(String name) : super(name);
 
   static BuiltSet<OrderStatusEnum> get values => _$orderStatusEnumValues;
   static OrderStatusEnum valueOf(String name) => _$orderStatusEnumValueOf(name);
 }
-

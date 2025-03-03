@@ -13,9 +13,9 @@ part 'customer.g.dart';
 /// Customer
 ///
 /// Properties:
-/// * [id] 
-/// * [username] 
-/// * [address] 
+/// * [id]
+/// * [username]
+/// * [address]
 @BuiltValue()
 abstract class Customer implements Built<Customer, CustomerBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -79,7 +79,9 @@ class _$CustomerSerializer implements PrimitiveSerializer<Customer> {
     Customer object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -143,4 +145,3 @@ class _$CustomerSerializer implements PrimitiveSerializer<Customer> {
     return result.build();
   }
 }
-

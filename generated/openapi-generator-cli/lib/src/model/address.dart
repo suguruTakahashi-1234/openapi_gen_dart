@@ -11,10 +11,10 @@ part 'address.g.dart';
 /// Address
 ///
 /// Properties:
-/// * [street] 
-/// * [city] 
-/// * [state] 
-/// * [zip] 
+/// * [street]
+/// * [city]
+/// * [state]
+/// * [zip]
 @BuiltValue()
 abstract class Address implements Built<Address, AddressBuilder> {
   @BuiltValueField(wireName: r'street')
@@ -88,7 +88,9 @@ class _$AddressSerializer implements PrimitiveSerializer<Address> {
     Address object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -159,4 +161,3 @@ class _$AddressSerializer implements PrimitiveSerializer<Address> {
     return result.build();
   }
 }
-

@@ -13,7 +13,6 @@ import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/user.dart';
 
 class UserApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -34,7 +33,7 @@ class UserApi {
   ///
   /// Returns a [Future] containing a [Response] with a [User] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<User>> createUser({ 
+  Future<Response<User>> createUser({
     User? user,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -61,11 +60,12 @@ class UserApi {
 
     try {
       const _type = FullType(User);
-      _bodyData = user == null ? null : _serializers.serialize(user, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = user == null
+          ? null
+          : _serializers.serialize(user, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -88,11 +88,12 @@ class UserApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(User),
-      ) as User;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(User),
+            ) as User;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -119,7 +120,7 @@ class UserApi {
   /// Creates list of users with given input array
   ///
   /// Parameters:
-  /// * [user] 
+  /// * [user]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -129,7 +130,7 @@ class UserApi {
   ///
   /// Returns a [Future] containing a [Response] with a [User] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<User>> createUsersWithListInput({ 
+  Future<Response<User>> createUsersWithListInput({
     BuiltList<User>? user,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -156,11 +157,12 @@ class UserApi {
 
     try {
       const _type = FullType(BuiltList, [FullType(User)]);
-      _bodyData = user == null ? null : _serializers.serialize(user, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = user == null
+          ? null
+          : _serializers.serialize(user, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -183,11 +185,12 @@ class UserApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(User),
-      ) as User;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(User),
+            ) as User;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -224,7 +227,7 @@ class UserApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> deleteUser({ 
+  Future<Response<void>> deleteUser({
     required String username,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -233,7 +236,10 @@ class UserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{username}'.replaceAll('{' r'username' '}', encodeQueryParameter(_serializers, username, const FullType(String)).toString());
+    final _path = r'/user/{username}'.replaceAll(
+        '{' r'username' '}',
+        encodeQueryParameter(_serializers, username, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -258,10 +264,10 @@ class UserApi {
   }
 
   /// Get user by user name
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [username] - The name that needs to be fetched. Use user1 for testing. 
+  /// * [username] - The name that needs to be fetched. Use user1 for testing.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -271,7 +277,7 @@ class UserApi {
   ///
   /// Returns a [Future] containing a [Response] with a [User] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<User>> getUserByName({ 
+  Future<Response<User>> getUserByName({
     required String username,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -280,7 +286,10 @@ class UserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{username}'.replaceAll('{' r'username' '}', encodeQueryParameter(_serializers, username, const FullType(String)).toString());
+    final _path = r'/user/{username}'.replaceAll(
+        '{' r'username' '}',
+        encodeQueryParameter(_serializers, username, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -305,11 +314,12 @@ class UserApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(User),
-      ) as User;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(User),
+            ) as User;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -333,7 +343,7 @@ class UserApi {
   }
 
   /// Logs user into the system
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [username] - The user name for login
@@ -347,7 +357,7 @@ class UserApi {
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> loginUser({ 
+  Future<Response<String>> loginUser({
     String? username,
     String? password,
     CancelToken? cancelToken,
@@ -371,8 +381,12 @@ class UserApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (username != null) r'username': encodeQueryParameter(_serializers, username, const FullType(String)),
-      if (password != null) r'password': encodeQueryParameter(_serializers, password, const FullType(String)),
+      if (username != null)
+        r'username': encodeQueryParameter(
+            _serializers, username, const FullType(String)),
+      if (password != null)
+        r'password': encodeQueryParameter(
+            _serializers, password, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -389,7 +403,6 @@ class UserApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -413,7 +426,7 @@ class UserApi {
   }
 
   /// Logs out current logged in user session
-  /// 
+  ///
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -425,7 +438,7 @@ class UserApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> logoutUser({ 
+  Future<Response<void>> logoutUser({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -472,7 +485,7 @@ class UserApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> updateUser({ 
+  Future<Response<void>> updateUser({
     required String username,
     User? user,
     CancelToken? cancelToken,
@@ -482,7 +495,10 @@ class UserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/{username}'.replaceAll('{' r'username' '}', encodeQueryParameter(_serializers, username, const FullType(String)).toString());
+    final _path = r'/user/{username}'.replaceAll(
+        '{' r'username' '}',
+        encodeQueryParameter(_serializers, username, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -500,11 +516,12 @@ class UserApi {
 
     try {
       const _type = FullType(User);
-      _bodyData = user == null ? null : _serializers.serialize(user, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = user == null
+          ? null
+          : _serializers.serialize(user, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -525,5 +542,4 @@ class UserApi {
 
     return _response;
   }
-
 }

@@ -18,6 +18,8 @@ npm-install:
 build:
 	flutter pub run build_runner build --delete-conflicting-outputs
 
+	dart format generated/openapi_generator
+
 # OpenAPI のコード生成
 .PHONY: openapi-gen
 openapi-gen:
@@ -29,3 +31,5 @@ openapi-gen:
 	  -o ./generated/openapi-generator-cli
 
 	cd generated/openapi-generator-cli && flutter pub run build_runner build --delete-conflicting-outputs
+
+	dart format generated/openapi-generator-cli

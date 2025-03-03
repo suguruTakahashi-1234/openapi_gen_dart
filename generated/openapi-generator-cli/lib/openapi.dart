@@ -22,4 +22,3 @@ export 'package:openapi/src/model/order.dart';
 export 'package:openapi/src/model/pet.dart';
 export 'package:openapi/src/model/tag.dart';
 export 'package:openapi/src/model/user.dart';
-

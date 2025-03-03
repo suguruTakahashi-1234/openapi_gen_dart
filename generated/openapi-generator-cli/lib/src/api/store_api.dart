@@ -13,7 +13,6 @@ import 'package:openapi/src/api_util.dart';
 import 'package:openapi/src/model/order.dart';
 
 class StoreApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -34,7 +33,7 @@ class StoreApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> deleteOrder({ 
+  Future<Response<void>> deleteOrder({
     required int orderId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -43,7 +42,10 @@ class StoreApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/store/order/{orderId}'.replaceAll('{' r'orderId' '}', encodeQueryParameter(_serializers, orderId, const FullType(int)).toString());
+    final _path = r'/store/order/{orderId}'.replaceAll(
+        '{' r'orderId' '}',
+        encodeQueryParameter(_serializers, orderId, const FullType(int))
+            .toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -80,7 +82,7 @@ class StoreApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltMap<String, int>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltMap<String, int>>> getInventory({ 
+  Future<Response<BuiltMap<String, int>>> getInventory({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -120,11 +122,13 @@ class StoreApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(int)]),
-      ) as BuiltMap<String, int>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltMap, [FullType(String), FullType(int)]),
+            ) as BuiltMap<String, int>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -161,7 +165,7 @@ class StoreApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Order] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Order>> getOrderById({ 
+  Future<Response<Order>> getOrderById({
     required int orderId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -170,7 +174,10 @@ class StoreApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/store/order/{orderId}'.replaceAll('{' r'orderId' '}', encodeQueryParameter(_serializers, orderId, const FullType(int)).toString());
+    final _path = r'/store/order/{orderId}'.replaceAll(
+        '{' r'orderId' '}',
+        encodeQueryParameter(_serializers, orderId, const FullType(int))
+            .toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -195,11 +202,12 @@ class StoreApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Order),
-      ) as Order;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Order),
+            ) as Order;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -226,7 +234,7 @@ class StoreApi {
   /// Place a new order in the store
   ///
   /// Parameters:
-  /// * [order] 
+  /// * [order]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -236,7 +244,7 @@ class StoreApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Order] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Order>> placeOrder({ 
+  Future<Response<Order>> placeOrder({
     Order? order,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -263,11 +271,12 @@ class StoreApi {
 
     try {
       const _type = FullType(Order);
-      _bodyData = order == null ? null : _serializers.serialize(order, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData = order == null
+          ? null
+          : _serializers.serialize(order, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -290,11 +299,12 @@ class StoreApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(Order),
-      ) as Order;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(Order),
+            ) as Order;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -316,5 +326,4 @@ class StoreApi {
       extra: _response.extra,
     );
   }
-
 }
