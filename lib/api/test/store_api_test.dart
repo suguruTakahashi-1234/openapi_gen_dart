@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
-import 'package:petstore_api/petstore_api.dart';
+import 'package:openapi/openapi.dart';
 
 /// tests for StoreApi
 void main() {
-  final instance = PetstoreApi().getStoreApi();
+  final instance = Openapi().getStoreApi();
 
   group(StoreApi, () {
     // Delete purchase order by ID

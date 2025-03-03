@@ -1,8 +1,8 @@
-# petstore_api.api.PetApi
+# openapi.api.PetApi
 
 ## Load the API package
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 ```
 
 All URIs are relative to *https://petstore3.swagger.io/api/v3*
@@ -28,11 +28,11 @@ Add a new pet to the store
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 // TODO Configure OAuth2 access token for authorization: petstore_auth
 //defaultApiClient.getAuthentication<OAuth>('petstore_auth').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = PetstoreApi().getPetApi();
+final api = Openapi().getPetApi();
 final Pet pet = ; // Pet | Create a new pet in the store
 
 try {
@@ -73,11 +73,11 @@ delete a pet
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 // TODO Configure OAuth2 access token for authorization: petstore_auth
 //defaultApiClient.getAuthentication<OAuth>('petstore_auth').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = PetstoreApi().getPetApi();
+final api = Openapi().getPetApi();
 final int petId = 789; // int | Pet id to delete
 final String apiKey = apiKey_example; // String | 
 
@@ -119,11 +119,11 @@ Multiple status values can be provided with comma separated strings
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 // TODO Configure OAuth2 access token for authorization: petstore_auth
 //defaultApiClient.getAuthentication<OAuth>('petstore_auth').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = PetstoreApi().getPetApi();
+final api = Openapi().getPetApi();
 final String status = status_example; // String | Status values that need to be considered for filter
 
 try {
@@ -164,11 +164,11 @@ Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 // TODO Configure OAuth2 access token for authorization: petstore_auth
 //defaultApiClient.getAuthentication<OAuth>('petstore_auth').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = PetstoreApi().getPetApi();
+final api = Openapi().getPetApi();
 final BuiltList<String> tags = ; // BuiltList<String> | Tags to filter by
 
 try {
@@ -209,7 +209,7 @@ Returns a single pet
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 // TODO Configure OAuth2 access token for authorization: petstore_auth
 //defaultApiClient.getAuthentication<OAuth>('petstore_auth').accessToken = 'YOUR_ACCESS_TOKEN';
 // TODO Configure API key authorization: api_key
@@ -217,7 +217,7 @@ import 'package:petstore_api/api.dart';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
-final api = PetstoreApi().getPetApi();
+final api = Openapi().getPetApi();
 final int petId = 789; // int | ID of pet to return
 
 try {
@@ -258,11 +258,11 @@ Update an existing pet by Id
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 // TODO Configure OAuth2 access token for authorization: petstore_auth
 //defaultApiClient.getAuthentication<OAuth>('petstore_auth').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = PetstoreApi().getPetApi();
+final api = Openapi().getPetApi();
 final Pet pet = ; // Pet | Update an existent pet in the store
 
 try {
@@ -303,11 +303,11 @@ Updates a pet in the store with form data
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 // TODO Configure OAuth2 access token for authorization: petstore_auth
 //defaultApiClient.getAuthentication<OAuth>('petstore_auth').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = PetstoreApi().getPetApi();
+final api = Openapi().getPetApi();
 final int petId = 789; // int | ID of pet that needs to be updated
 final String name = name_example; // String | Name of pet that needs to be updated
 final String status = status_example; // String | Status of pet that needs to be updated
@@ -351,11 +351,11 @@ uploads an image
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 // TODO Configure OAuth2 access token for authorization: petstore_auth
 //defaultApiClient.getAuthentication<OAuth>('petstore_auth').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = PetstoreApi().getPetApi();
+final api = Openapi().getPetApi();
 final int petId = 789; // int | ID of pet to update
 final String additionalMetadata = additionalMetadata_example; // String | Additional Metadata
 final MultipartFile body = BINARY_DATA_HERE; // MultipartFile | 

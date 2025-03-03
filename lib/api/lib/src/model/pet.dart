@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:petstore_api/src/model/category.dart';
-import 'package:petstore_api/src/model/tag.dart';
+import 'package:openapi/src/model/category.dart';
+import 'package:openapi/src/model/tag.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,25 +14,25 @@ part 'pet.g.dart';
 /// Pet
 ///
 /// Properties:
-/// * [name]
-/// * [photoUrls]
 /// * [id]
+/// * [name]
 /// * [category]
+/// * [photoUrls]
 /// * [tags]
 /// * [status] - pet status in the store
 @BuiltValue()
 abstract class Pet implements Built<Pet, PetBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
-  @BuiltValueField(wireName: r'photoUrls')
-  BuiltList<String> get photoUrls;
-
   @BuiltValueField(wireName: r'id')
   int? get id;
 
+  @BuiltValueField(wireName: r'name')
+  String get name;
+
   @BuiltValueField(wireName: r'category')
   Category? get category;
+
+  @BuiltValueField(wireName: r'photoUrls')
+  BuiltList<String> get photoUrls;
 
   @BuiltValueField(wireName: r'tags')
   BuiltList<Tag>? get tags;
@@ -65,16 +65,6 @@ class _$PetSerializer implements PrimitiveSerializer<Pet> {
     Pet object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'photoUrls';
-    yield serializers.serialize(
-      object.photoUrls,
-      specifiedType: const FullType(BuiltList, [FullType(String)]),
-    );
     if (object.id != null) {
       yield r'id';
       yield serializers.serialize(
@@ -82,6 +72,11 @@ class _$PetSerializer implements PrimitiveSerializer<Pet> {
         specifiedType: const FullType(int),
       );
     }
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.category != null) {
       yield r'category';
       yield serializers.serialize(
@@ -89,6 +84,11 @@ class _$PetSerializer implements PrimitiveSerializer<Pet> {
         specifiedType: const FullType(Category),
       );
     }
+    yield r'photoUrls';
+    yield serializers.serialize(
+      object.photoUrls,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
+    );
     if (object.tags != null) {
       yield r'tags';
       yield serializers.serialize(
@@ -128,20 +128,6 @@ class _$PetSerializer implements PrimitiveSerializer<Pet> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'photoUrls':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.photoUrls.replace(valueDes);
-          break;
         case r'id':
           final valueDes = serializers.deserialize(
             value,
@@ -149,12 +135,26 @@ class _$PetSerializer implements PrimitiveSerializer<Pet> {
           ) as int;
           result.id = valueDes;
           break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
         case r'category':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(Category),
           ) as Category;
           result.category.replace(valueDes);
+          break;
+        case r'photoUrls':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.photoUrls.replace(valueDes);
           break;
         case r'tags':
           final valueDes = serializers.deserialize(

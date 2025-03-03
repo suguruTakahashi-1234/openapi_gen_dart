@@ -1,8 +1,8 @@
-# petstore_api.api.UserApi
+# openapi.api.UserApi
 
 ## Load the API package
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 ```
 
 All URIs are relative to *https://petstore3.swagger.io/api/v3*
@@ -27,9 +27,9 @@ This can only be done by the logged in user.
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 
-final api = PetstoreApi().getUserApi();
+final api = Openapi().getUserApi();
 final User user = ; // User | Created user object
 
 try {
@@ -70,9 +70,9 @@ Creates list of users with given input array
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 
-final api = PetstoreApi().getUserApi();
+final api = Openapi().getUserApi();
 final BuiltList<User> user = ; // BuiltList<User> | 
 
 try {
@@ -113,9 +113,9 @@ This can only be done by the logged in user.
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 
-final api = PetstoreApi().getUserApi();
+final api = Openapi().getUserApi();
 final String username = username_example; // String | The name that needs to be deleted
 
 try {
@@ -155,9 +155,9 @@ Get user by user name
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 
-final api = PetstoreApi().getUserApi();
+final api = Openapi().getUserApi();
 final String username = username_example; // String | The name that needs to be fetched. Use user1 for testing. 
 
 try {
@@ -198,9 +198,9 @@ Logs user into the system
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 
-final api = PetstoreApi().getUserApi();
+final api = Openapi().getUserApi();
 final String username = username_example; // String | The user name for login
 final String password = password_example; // String | The password for login in clear text
 
@@ -243,9 +243,9 @@ Logs out current logged in user session
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 
-final api = PetstoreApi().getUserApi();
+final api = Openapi().getUserApi();
 
 try {
     api.logoutUser();
@@ -281,9 +281,9 @@ This can only be done by the logged in user.
 
 ### Example
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 
-final api = PetstoreApi().getUserApi();
+final api = Openapi().getUserApi();
 final String username = username_example; // String | name that need to be deleted
 final User user = ; // User | Update an existent user in the store
 

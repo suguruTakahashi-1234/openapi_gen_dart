@@ -9,8 +9,8 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:petstore_api/src/api_util.dart';
-import 'package:petstore_api/src/model/user.dart';
+import 'package:openapi/src/api_util.dart';
+import 'package:openapi/src/model/user.dart';
 
 class UserApi {
   final Dio _dio;

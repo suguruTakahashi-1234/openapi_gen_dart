@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 README.md
 analysis_options.yaml
 doc/Address.md
@@ -12,7 +13,7 @@ doc/StoreApi.md
 doc/Tag.md
 doc/User.md
 doc/UserApi.md
-lib/petstore_api.dart
+lib/openapi.dart
 lib/src/api.dart
 lib/src/api/pet_api.dart
 lib/src/api/store_api.dart

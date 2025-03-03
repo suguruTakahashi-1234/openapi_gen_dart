@@ -1,17 +1,17 @@
-# petstore_api.model.Pet
+# openapi.model.Pet
 
 ## Load the model package
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | 
-**photoUrls** | **BuiltList&lt;String&gt;** |  | 
 **id** | **int** |  | [optional] 
+**name** | **String** |  | 
 **category** | [**Category**](Category.md) |  | [optional] 
+**photoUrls** | **BuiltList&lt;String&gt;** |  | 
 **tags** | [**BuiltList&lt;Tag&gt;**](Tag.md) |  | [optional] 
 **status** | **String** | pet status in the store | [optional] 
 

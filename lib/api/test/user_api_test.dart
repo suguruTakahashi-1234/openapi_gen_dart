@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
-import 'package:petstore_api/petstore_api.dart';
+import 'package:openapi/openapi.dart';
 
 /// tests for UserApi
 void main() {
-  final instance = PetstoreApi().getUserApi();
+  final instance = Openapi().getUserApi();
 
   group(UserApi, () {
     // Create user

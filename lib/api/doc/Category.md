@@ -1,8 +1,8 @@
-# petstore_api.model.Category
+# openapi.model.Category
 
 ## Load the model package
 ```dart
-import 'package:petstore_api/api.dart';
+import 'package:openapi/api.dart';
 ```
 
 ## Properties

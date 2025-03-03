@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:petstore_api/petstore_api.dart';
+import 'package:openapi/openapi.dart';
 
 // tests for User
 void main() {

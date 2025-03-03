@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
-import 'package:petstore_api/petstore_api.dart';
+import 'package:openapi/openapi.dart';
 
 /// tests for PetApi
 void main() {
-  final instance = PetstoreApi().getPetApi();
+  final instance = Openapi().getPetApi();
 
   group(PetApi, () {
     // Add a new pet to the store

@@ -4,22 +4,22 @@
 
 import 'package:dio/dio.dart';
 import 'package:built_value/serializer.dart';
-import 'package:petstore_api/src/serializers.dart';
-import 'package:petstore_api/src/auth/api_key_auth.dart';
-import 'package:petstore_api/src/auth/basic_auth.dart';
-import 'package:petstore_api/src/auth/bearer_auth.dart';
-import 'package:petstore_api/src/auth/oauth.dart';
-import 'package:petstore_api/src/api/pet_api.dart';
-import 'package:petstore_api/src/api/store_api.dart';
-import 'package:petstore_api/src/api/user_api.dart';
+import 'package:openapi/src/serializers.dart';
+import 'package:openapi/src/auth/api_key_auth.dart';
+import 'package:openapi/src/auth/basic_auth.dart';
+import 'package:openapi/src/auth/bearer_auth.dart';
+import 'package:openapi/src/auth/oauth.dart';
+import 'package:openapi/src/api/pet_api.dart';
+import 'package:openapi/src/api/store_api.dart';
+import 'package:openapi/src/api/user_api.dart';
 
-class PetstoreApi {
+class Openapi {
   static const String basePath = r'https://petstore3.swagger.io/api/v3';
 
   final Dio dio;
   final Serializers serializers;
 
-  PetstoreApi({
+  Openapi({
     Dio? dio,
     Serializers? serializers,
     String? basePathOverride,

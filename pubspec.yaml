@@ -8,10 +8,14 @@ environment:
   sdk: ^3.6.2
 
 dependencies:
-  openapi_generator_annotations: ^6.1.0
+  built_collection:
+  dio:
+  json_annotation:
+  openapi_generator_annotations:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  openapi_generator: ^6.1.0
-  build_runner: ^2.4.15
+  openapi_generator:
+  build_runner:
+  json_serializable:
